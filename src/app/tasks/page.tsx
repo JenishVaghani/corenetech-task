@@ -5,12 +5,12 @@ import FilterBar from "../components/FilterBar";
 import { Plus } from "lucide-react";
 import { TaskCardSkeleton } from "../components/Skeletons";
 import { EmptyState, ErrorState } from "../components/States";
-import { TaskCard } from "../components/TaskCard";
 import { useQuery } from "@tanstack/react-query";
 import { useDebounce } from "../hooks/useDebounce";
 import { fetchTasks } from "../lib/api";
 import { useAppSelector } from "../redux/store";
-import { TaskForm } from "../components/TaskForm";
+import TaskForm from "../components/TaskForm";
+import TaskCard from "../components/TaskCard";
 
 const TaskPage = () => {
   const [search, setSearch] = useState("");
@@ -59,7 +59,7 @@ const TaskPage = () => {
             <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Tasks
             </h1>
-            <p className="mt-1 text-sm text-gray-600">
+            <p className="mt-1 text-sm text-text-secondary">
               Organize your work and track progress at a glance.
             </p>
           </div>
@@ -68,7 +68,7 @@ const TaskPage = () => {
             <FilterBar filter={filter} onChange={setFilter} counts={counts} />
             <button
               onClick={() => setFormOpen(true)}
-              className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg bg-blue-500 px-4 text-sm font-medium text-white shadow-sm transition-all hover:bg-blue-600 active:scale-[0.98] cursor-pointer"
+              className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg bg-primary px-4 text-sm font-medium text-text-on-primary shadow-sm transition-all hover:bg-blue-600 active:scale-[0.98] cursor-pointer"
             >
               <Plus className="h-4 w-4" />
               Add Task

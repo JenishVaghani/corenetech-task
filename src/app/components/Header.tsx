@@ -1,20 +1,17 @@
 "use client";
-import { Moon, Sun, CheckSquare } from "lucide-react";
-import { SearchBar } from "./SearchBar";
-import { useTheme } from "../hooks/useTheme";
+import { CheckSquare } from "lucide-react";
 import Link from "next/link";
+import SearchBar from "./SearchBar";
 
 const Header = ({ search, onSearchChange, showSearch = true }: HeaderProps) => {
-  const { theme, toggle } = useTheme();
-
   return (
-    <header className="sticky top-0 z-40 border-b border-gray-200 bg-gray-100">
+    <header className="sticky top-0 z-40 border-b border-gray-200 bg-background">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:gap-6 sm:px-6">
         <Link href="/tasks" className="flex items-center gap-2 shrink-0">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500 text-white">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-text-on-primary">
             <CheckSquare className="h-4 w-4" />
           </div>
-          <span className="hidden text-base font-semibold tracking-tight sm:inline text-gray-900">
+          <span className="hidden text-base font-semibold tracking-tight sm:inline text-text-main">
             Task Manager
           </span>
         </Link>
@@ -24,18 +21,6 @@ const Header = ({ search, onSearchChange, showSearch = true }: HeaderProps) => {
             <SearchBar value={search ?? ""} onChange={onSearchChange} />
           )}
         </div>
-
-        <button
-          onClick={toggle}
-          aria-label="Toggle theme"
-          className="flex h-9 w-9 items-center justify-center rounded-lg border bg-white border-gray-200 text-gray-600 hover:bg-gray-200 cursor-pointer"
-        >
-          {theme === "dark" ? (
-            <Sun className="h-4 w-4" />
-          ) : (
-            <Moon className="h-4 w-4" />
-          )}
-        </button>
       </div>
     </header>
   );

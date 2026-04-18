@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { useAppDispatch } from "../redux/store";
 import { addLocalTask } from "../redux/slices/tasksSlice";
 
-export function TaskForm({ open, onClose }: TaskFormProps) {
+const TaskForm = ({ open, onClose }: TaskFormProps) => {
   const dispatch = useAppDispatch();
   const [title, setTitle] = useState("");
   const [completed, setCompleted] = useState(false);
@@ -47,10 +47,10 @@ export function TaskForm({ open, onClose }: TaskFormProps) {
       <div className="relative w-full max-w-md rounded-2xl border border-gray-200 bg-gray-100 p-6 animate-in fade-in zoom-in-95">
         <div className="flex items-start justify-between">
           <div>
-            <h2 className="text-lg font-semibold tracking-tight text-gray-900">
+            <h2 className="text-lg font-semibold tracking-tight text-text-main">
               New Task
             </h2>
-            <p className="mt-1 text-sm text-gray-600">
+            <p className="mt-1 text-sm text-text-secondary">
               Add a task to your list.
             </p>
           </div>
@@ -77,7 +77,7 @@ export function TaskForm({ open, onClose }: TaskFormProps) {
                 if (error) setError(null);
               }}
               placeholder="e.g. Review pull requests"
-              className={`h-10 w-full rounded-lg border bg-white px-3 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none ${
+              className={`h-10 w-full rounded-lg border bg-white px-3 text-sm text-text-main placeholder:text-gray-500 focus:outline-none ${
                 error ? "border-red-500" : "border-gray-500 "
               }`}
             />
@@ -98,13 +98,13 @@ export function TaskForm({ open, onClose }: TaskFormProps) {
             <button
               type="button"
               onClick={onClose}
-              className="h-9 rounded-lg bg-gray-300 px-4 text-sm font-medium text-gray-900 hover:bg-gray-400 cursor-pointer"
+              className="h-9 rounded-lg bg-gray-300 px-4 text-sm font-medium text-text-main hover:bg-gray-400 cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="h-9 rounded-lg bg-blue-500 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-700 cursor-pointer"
+              className="h-9 rounded-lg bg-primary px-4 text-sm font-medium text-text-on-primary transition-colors hover:bg-blue-700 cursor-pointer"
             >
               Add Task
             </button>
@@ -113,4 +113,6 @@ export function TaskForm({ open, onClose }: TaskFormProps) {
       </div>
     </div>
   );
-}
+};
+
+export default TaskForm;

@@ -11,15 +11,15 @@ const FilterBar = ({ filter, onChange, counts }: FilterBarProps) => {
             onClick={() => onChange(t.value)}
             className={`flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium transition-all cursor-pointer ${
               active
-                ? "bg-white text-gray-900 shadow-sm"
-                : "text-gray-600 hover:text-gray-900"
+                ? "bg-white text-text-main shadow-sm"
+                : "text-text-secondary hover:text-text-main"
             }`}
           >
             {t.label}
             <span
               className={`rounded px-1.5 py-0.5 text-xs tabular-nums ${
                 active
-                  ? "bg-gray-200 text-gray-900"
+                  ? "bg-gray-200 text-text-main"
                   : "bg-transparent text-gray-500"
               }`}
             >
