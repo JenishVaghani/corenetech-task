@@ -10,6 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useDebounce } from "../hooks/useDebounce";
 import { fetchTasks } from "../lib/api";
 import { useAppSelector } from "../redux/store";
+import { TaskForm } from "../components/TaskForm";
 
 const TaskPage = () => {
   const [search, setSearch] = useState("");
@@ -102,6 +103,7 @@ const TaskPage = () => {
           )}
         </div>
       </main>
+      <TaskForm open={formOpen} onClose={() => setFormOpen(false)} />
     </div>
   );
 };

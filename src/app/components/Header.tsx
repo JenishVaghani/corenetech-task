@@ -28,7 +28,7 @@ const Header = ({ search, onSearchChange, showSearch = true }: HeaderProps) => {
         <button
           onClick={toggle}
           aria-label="Toggle theme"
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-200 cursor-pointer"
+          className="flex h-9 w-9 items-center justify-center rounded-lg border bg-white border-gray-200 text-gray-600 hover:bg-gray-200 cursor-pointer"
         >
           {theme === "dark" ? (
             <Sun className="h-4 w-4" />

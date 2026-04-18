@@ -24,3 +24,8 @@ interface SearchBarProps {
 interface TaskCardProps {
   task: Task;
 }
+
+interface TaskFormProps {
+  open: boolean;
+  onClose: () => void;
+}
